@@ -31,6 +31,20 @@ public class DynamicStringList implements StringList {
         size++;  
     }
 
+    public String remove(int index){
+        String removedValue = myArray[index];
+        int count = 0;
+        for(int i = 0; i < myArray.length; i++){
+             if (myArray[i] != myArray[index]) {
+                myArray[count] = myArray[i];
+                count++;
+            } else {
+                size --;
+            }
+        }
+        return removedValue;
+    }
+
     public int size() {
         return size;
     }
