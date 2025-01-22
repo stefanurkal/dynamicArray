@@ -10,13 +10,13 @@ public class DynamicStringListTest {
 
     @BeforeEach
     public void setUp() {
-        // Initialize the list with an initial capacity of 5
+        
         list = new DynamicStringList();
     }
 
     @Test
     public void testSet() {
-        // Test replacing an element at a specific index
+        
         list.add("Seahawks");
         list.add("Mariners");
         list.add("Sonics");
@@ -45,12 +45,17 @@ public class DynamicStringListTest {
     }
     @Test
     public void testRemove() {
-        // Test removing an element and checking the size and returned value
+        
         list.add("Seahawks");
         list.add("Mariners");
         list.add("Sonics");
 
         String removeItem= list.remove(2);
         assertEquals("Sonics", removeItem);
+    }
+
+    @Test
+    public void testCapacity() {
+        assertEquals(10, list.capacity());
     }
 }
